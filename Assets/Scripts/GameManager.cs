@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     {
         isOver = false;
         isShut = false;
+        UnityCallLoading();
     }
 
     private void Update()
@@ -70,6 +71,13 @@ public class GameManager : MonoBehaviour
     {
 #if UNITY_WEBGL == true && UNITY_EDITOR == false
     CallReact(false);
+#endif
+    }
+
+    public void UnityCallLoading()
+    {
+#if UNITY_WEBGL == true && UNITY_EDITOR == false
+    Loading();
 #endif
     }
 
