@@ -806,6 +806,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1472186891}
+  models:
+  - {fileID: 21300000, guid: 37fa25e56f796574788a078b6e470f55, type: 3}
+  - {fileID: 21300000, guid: 6459365733d5a404082eaf0bf7e2bcfd, type: 3}
+  - {fileID: 21300000, guid: 72bb081298cb8cd44b9a38c1ec6cb7c3, type: 3}
 --- !u!4 &1066174446
 Transform:
   m_ObjectHideFlags: 0

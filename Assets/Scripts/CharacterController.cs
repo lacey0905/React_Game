@@ -112,5 +112,5 @@ public class CharacterController : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
-    
+
 }

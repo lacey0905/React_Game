@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,5 +34,16 @@ public class GameManager : MonoBehaviour
         PlayerStatic.ResetStat();
     }
 
+    public void GameStart()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
+    public List<Sprite> models = new List<Sprite>();
+
+    public void ChanageModel(int modelIdx)
+    {
+        PlayerStatic.model.sprite = models[modelIdx];
+    }
 
 }
