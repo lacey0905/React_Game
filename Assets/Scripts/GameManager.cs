@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [DllImport("__Internal")]
     private static extern void CallReact(bool gameOver);
+    private static extern void Loading();
 
     public CharacterController Player;
     public static CharacterController PlayerStatic;
