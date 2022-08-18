@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
 
 public class GameManager : MonoBehaviour
 {
+
+    [DllImport("__Internal")]
+    private static extern void CallReact(bool gameOver);
 
     public CharacterController Player;
     public static CharacterController PlayerStatic;
@@ -16,13 +20,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        PlayerStatic.model.sprite = models[currentModel];
         PlayerStatic = Player;
         cameraTarget = Player.transform;
-    }
-
-    private void Start()
-    {
-        PlayerStatic.model.sprite = models[currentModel];
     }
 
     private void Update()
@@ -53,5 +53,14 @@ public class GameManager : MonoBehaviour
     {
         currentModel = modelIdx;
     }
+
+    public static void UnityCall()
+    {
+#if UNITY_WEBGL == true && UNITY_EDITOR == false
+    CallReact(false);
+#endif
+    }
+
+
 
 }
