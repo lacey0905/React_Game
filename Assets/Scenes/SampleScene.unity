@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myHP: 100
   myStamina: 100
-  staminaMinus: 10
+  staminaMinus: 30
   power: 0
   powerMax: 30
   powerPlus: 10
