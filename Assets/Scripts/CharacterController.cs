@@ -110,7 +110,7 @@ public class CharacterController : MonoBehaviour
         {
             myHP = 0f;
             this.gameObject.SetActive(false);
-            GameManager.UnityCall();
+            GameManager.isOver = true;
         }
     }
 

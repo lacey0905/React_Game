@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public static int currentModel = 0;
     public List<Sprite> models = new List<Sprite>();
 
+    public static bool isOver = false;
+
     private void Awake()
     {
         PlayerStatic = Player;
@@ -26,9 +28,19 @@ public class GameManager : MonoBehaviour
         cameraTarget = PlayerStatic.transform;
     }
 
+    private void Start()
+    {
+        isOver = false;
+        isShut = false;
+    }
+
     private void Update()
     {
         Player.PlayerUpdate();
+        if(isOver)
+        {
+            Invoke("UnityCall", 3f);
+        }
     }
 
     void FixedUpdate()
@@ -54,7 +66,7 @@ public class GameManager : MonoBehaviour
         currentModel = modelIdx;
     }
 
-    public static void UnityCall()
+    public void UnityCall()
     {
 #if UNITY_WEBGL == true && UNITY_EDITOR == false
     CallReact(false);
