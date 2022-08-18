@@ -12,10 +12,17 @@ public class GameManager : MonoBehaviour
     public static Transform cameraTarget;
     public static bool isShut = false;
 
+    public static int currentModel = 0;
+
     private void Awake()
     {
         PlayerStatic = Player;
         cameraTarget = Player.transform;
+    }
+
+    private void Start()
+    {
+        PlayerStatic.model.sprite = models[currentModel];
     }
 
     private void Update()
@@ -34,8 +41,9 @@ public class GameManager : MonoBehaviour
         PlayerStatic.ResetStat();
     }
 
-    public void GameStart()
+    public void GameStart(int idx)
     {
+        ChanageModel(idx);
         SceneManager.LoadScene("Main");
     }
 
@@ -43,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void ChanageModel(int modelIdx)
     {
-        PlayerStatic.model.sprite = models[modelIdx];
+        currentModel = modelIdx;
     }
 
 }
