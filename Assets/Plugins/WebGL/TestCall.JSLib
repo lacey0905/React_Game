@@ -6,9 +6,9 @@ mergeInto(LibraryManager.library, {
       console.warn("Failed to dispatch event");
     }
   },
-  Loading: function () {
+  CallLoading: function () {
     try {
-      window.dispatchReactUnityEvent("Loading");
+      window.dispatchReactUnityEvent("CallLoading");
     } catch (e) {
       console.warn("Failed to dispatch event");
     }

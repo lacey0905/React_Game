@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
 
     [DllImport("__Internal")]
     private static extern void CallReact(bool gameOver);
-    private static extern void Loading();
+
+    [DllImport("__Internal")]
+    private static extern void CallLoading();
 
     public CharacterController Player;
     public static CharacterController PlayerStatic;
@@ -78,7 +80,7 @@ public class GameManager : MonoBehaviour
     public void UnityCallLoading()
     {
 #if UNITY_WEBGL == true && UNITY_EDITOR == false
-    Loading();
+    CallLoading();
 #endif
     }
 
