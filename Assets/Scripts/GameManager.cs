@@ -17,12 +17,13 @@ public class GameManager : MonoBehaviour
     public static bool isShut = false;
 
     public static int currentModel = 0;
+    public List<Sprite> models = new List<Sprite>();
 
     private void Awake()
     {
-        PlayerStatic.model.sprite = models[currentModel];
         PlayerStatic = Player;
-        cameraTarget = Player.transform;
+        PlayerStatic.model.sprite = models[currentModel];
+        cameraTarget = PlayerStatic.transform;
     }
 
     private void Update()
@@ -47,7 +48,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    public List<Sprite> models = new List<Sprite>();
 
     public void ChanageModel(int modelIdx)
     {
